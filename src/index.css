@@ -1,0 +1,25 @@
+.button {
+	width: auto;
+	height: 15vh;
+	font-size: 2.5em;
+	margin: 1%;
+}
+
+#character {
+	text-align: center;
+	font-size: 5em;
+}
+
+.buttons {
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-template-rows: auto auto;
+}
+
+.correct {
+	color: green;
+}
+
+.wrong {
+	color: red;
+}
