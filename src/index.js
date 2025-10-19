@@ -1,5 +1,43 @@
 const characterDisplay = document.getElementById("character")
 const options = document.getElementById("options")
+const button1 = document.getElementById("hira")
+const button2 = document.getElementById("kata")
+const menu = document.getElementById("charSetPicker")
+const game = document.getElementById("characterMenu")
+const backButton = document.getElementById("back")
+
+menu.classList.remove("hidden")
+game.classList.add("hidden")
+
+let pack
+
+backButton.addEventListener("click", function(){
+	menu.classList.remove("hidden")
+	game.classList.add("hidden")
+})
+
+function choosePack(packChoice) {
+	menu.classList.add("hidden")
+	game.classList.remove("hidden")
+	switch (packChoice) {
+		case "hira": 
+			pack =  "../characterpacks/charset - Hira.json"
+			break
+		case "kata":
+			pack =  "../characterpacks/charset - Kata.json"
+			break
+	}
+}
+
+button1.addEventListener("click", function(){
+	choosePack("hira")
+	loadCharacter()
+})
+
+button2.addEventListener("click", function(){
+	choosePack("kata")
+	loadCharacter()
+})
 
 function generateRandomNumber(min, max) {
 	return Math.floor(Math.random() * (max - min)) + min
@@ -12,7 +50,7 @@ async function loadCharacter() {
 	options.innerHTML = ""
 	let charList = []
 
-	await fetch('../characterpacks/chars.json')
+	await fetch(pack)
 	.then(response => response.json())
 	.then(data => {
 		charList = JSON.stringify(data)
@@ -76,8 +114,3 @@ async function loadCharacter() {
 	let char = Object.keys(charList[pickedChar])
 	characterDisplay.innerHTML = char
 }
-
-
-
-
-loadCharacter()
