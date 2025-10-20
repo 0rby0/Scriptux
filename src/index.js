@@ -2,6 +2,7 @@ const characterDisplay = document.getElementById("character")
 const options = document.getElementById("options")
 const button1 = document.getElementById("hira")
 const button2 = document.getElementById("kata")
+const button3 = document.getElementById("gab")
 const menu = document.getElementById("charSetPicker")
 const game = document.getElementById("characterMenu")
 const backButton = document.getElementById("back")
@@ -26,6 +27,9 @@ function choosePack(packChoice) {
 		case "kata":
 			pack =  "../characterpacks/charset - Kata.json"
 			break
+		case "gre":
+			pack =  "../characterpacks/charset - Greek.json"
+			break
 	}
 }
 
@@ -36,6 +40,11 @@ button1.addEventListener("click", function(){
 
 button2.addEventListener("click", function(){
 	choosePack("kata")
+	loadCharacter()
+})
+
+button3.addEventListener("click", function(){
+	choosePack("gre")
 	loadCharacter()
 })
 
