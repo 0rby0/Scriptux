@@ -1,31 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="./index.css">
-	<script src="./index.js" defer></script>
-	<title>Scriptux</title>
-</head>
-<body>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="style.css">
+		<script type="module" src="index.js" defer></script>
+		<title>Scriptux</title>
+	</head>
 
-	<div id="charSetPicker">
-		<h2>Japanese</h2>
-		<div class="choices">
-			<button id="hira" class="packButton">Hiragana</button>
-			<button id="kata" class="packButton">Katakana</button>
+	<body>
+
+		<div id="charSetPicker">
+
+			<section class="block">
+				<h2>Japanese</h2>
+				<div class="choices">
+					<button id="hira" class="packButton">Hiragana</button>
+					<button id="kata" class="packButton">Katakana</button>
+					<button id="h2k" class="packButton">Katakana From Hiragana</button>
+				</div>
+			</section>
+
+			<section class="block">
+				<h2>Greek</h2>
+				<div class="choices">
+					<button id="gab" class="packButton">Greek Alphabet</button>
+				</div>
+			</section>
 		</div>
-		<h2>Greek</h2>
-		<div class="choices">
-			<button id="gab" class="packButton">Greek Alphabet</button>
+
+		<div id="characterMenu">
+			<div class="upper-menu">
+				<button id="back">Back to Menu</button>
+				<h1 id="character"></h1>
+			</div>
+
+			<div class="buttons" id="options"></div>
 		</div>
-	</div>
 
-	<div id="characterMenu">
-		<button id="back">Back to Menu</button>
-		<h1 id="character"></h1>
-		<div class="buttons" id="options"></div>
-	</div>
-
-</body>
+	</body>
 </html>

@@ -2,6 +2,7 @@ const characterDisplay = document.getElementById("character")
 const options = document.getElementById("options")
 const button1 = document.getElementById("hira")
 const button2 = document.getElementById("kata")
+const button4 = document.getElementById("h2k")
 const button3 = document.getElementById("gab")
 const menu = document.getElementById("charSetPicker")
 const game = document.getElementById("characterMenu")
@@ -27,6 +28,9 @@ function choosePack(packChoice) {
 		case "kata":
 			pack =  "../characterpacks/charset - Kata.json"
 			break
+		case "h2k":
+			pack =  "../characterpacks/charset - Hira2Kata.json"
+			break
 		case "gre":
 			pack =  "../characterpacks/charset - Greek.json"
 			break
@@ -47,6 +51,12 @@ button3.addEventListener("click", function(){
 	choosePack("gre")
 	loadCharacter()
 })
+
+button4.addEventListener("click", function(){
+	choosePack("h2k")
+	loadCharacter()
+})
+
 
 function generateRandomNumber(min, max) {
 	return Math.floor(Math.random() * (max - min)) + min
@@ -104,7 +114,7 @@ async function loadCharacter() {
 				characterDisplay.classList.add("wrong")
 			}
 			characterDisplay.innerHTML = translation
-			setTimeout(loadCharacter, 1000)
+			setTimeout(loadCharacter, 500)
 		})
 
 		let translation = Object.values(charList[pickedChar])
